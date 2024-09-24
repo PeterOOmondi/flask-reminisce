@@ -1,0 +1,50 @@
+Welcome to python flask!!
+
+ENVIRONMENT SET UP
+Flask is a python microframework for building web applications. It is fast and easy to use in building websites. To start with Flask, just as any other normal python project, we need to first create a virtual environment.
+This helps to ensure that all packages that you are going to install during this project will not interfere with the python packages installed in your machine.
+To create a virtual environment:
+1. open an empty folder on Visual Studio Code.
+2. Open the terminal 
+3. Type the following pip install virtualenv.
+4. Then type the following python venv (virtual environment name) usually venv thus; python -m venv venv
+5. We then need to activate our virtual environment. on Windows, we use venv\Scripts\activate
+
+You will then see your terminal beginning with (venv).
+You can then proceed to install flask using pip install flask.
+
+FLASK HELLO WORLD
+They always say it is against the programming law to learn a programming language without starting with Hello World and we won't defy that law.
+In order to code using flask, we need to create a file outside the venv directory but within the main file i.e. app.py.
+Open the file.
+The first thing is to import Flask from flask i.e.
+  from flask import Flask
+
+We then initialize Flask using
+  app = Flask(__name__)  
+  Name is passed as an argument as it is used by the compiler to know the first file such that it can trace the other files using the first file.
+The next step is to define a route using a decorator. This is the route where we will navigate to from the URL to get to the contents that will be included within it. 
+@app.route('/')
+A single slash in the decorator defines the first page to get to after compilation and running of the program.
+We then define a function to write our content inside i.e.
+def hello():
+
+That is the function and we return the text to display on the screen. In this case 'Hello World'.
+return 'Hello World'
+
+To allow pur changes to be reflected to the website without re-compilation, we add the following  code at the bottom:
+  if __name__ == '__main__':
+    app.run(debug=True)
+
+Thus the whole code will look like this:
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello World'
+
+if __name__ == '__main__':
+    app.run(debug=True)
+  
